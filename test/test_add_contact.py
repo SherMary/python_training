@@ -13,7 +13,7 @@ def app(request):
 
 
 def test_add_contact(app):
-    app.login(username="admin", password="secret")
+    app.session.login(username="admin", password="secret")
     app.create_contact(Contact(firstname="Doctor",
                                middlename="???",
                                lastname="Who",
@@ -34,5 +34,5 @@ def test_add_contact(app):
                                address2="Galifray dimension",
                                home2="Planet Galifray",
                                notes="Somwhere far beyond"))
-    app.logout()
+    app.session.logout()
 
