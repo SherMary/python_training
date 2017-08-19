@@ -1,7 +1,6 @@
 from model.contact import Contact
 
 def test_edit_contact(app):
-    app.session.login(username="admin", password="secret")
     app.contact.edit_contact(Contact(firstname="Master",
                                middlename="Missi",
                                lastname="Cruel Person",
@@ -22,4 +21,3 @@ def test_edit_contact(app):
                                address2="Galifray dimension",
                                home2="Where doctor is",
                                notes="Somewhere far beyond!"))
-    app.session.logout()
