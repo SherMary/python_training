@@ -10,6 +10,7 @@ class ContactHelper:
         self.fill_contact_form(contact)
         # submit contact creation
         wd.find_element_by_xpath("//div[@id='content']/form/input[21]").click()
+        wd.find_element_by_link_text("home page").click()
 
     def fill_contact_form(self, contact):
         wd = self.app.wd
@@ -132,5 +133,6 @@ class ContactHelper:
 
     def count(self):
         wd = self.app.wd
-        wd.get("http://localhost/addressbook/")
+        if not (wd.current_url.endswith("/addressbook/") and len(wd.find_elements_by_name("searchform"))) > 0:
+            wd.get("http://localhost/addressbook/")
         return len(wd.find_elements_by_name("selected[]"))

@@ -7,8 +7,8 @@ class Apllication:
 
     def __init__(self):
         self.wd = WebDriver(capabilities={"marionette": False})
-        self.wd.implicitly_wait(5)
         self.session = SessionHelper(self)
+        #self.wd.implicitly_wait(5)
         self.group = GroupHelper(self)
         self.contact = ContactHelper(self)
 
