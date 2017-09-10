@@ -14,6 +14,7 @@ class ContactHelper:
         # submit contact creation
         wd.find_element_by_xpath("//div[@id='content']/form/input[21]").click()
         wd.find_element_by_link_text("home page").click()
+        self.contact_cash = None
 
     def fill_contact_form(self, contact):
         wd = self.app.wd
@@ -62,6 +63,7 @@ class ContactHelper:
         # submit modification
         wd.find_element_by_name("update").click()
         wd.find_element_by_link_text("home").click()
+        self.contact_cash = None
 
     def edit_contact(self, contact):
         wd = self.app.wd
@@ -129,6 +131,7 @@ class ContactHelper:
         # submit contact editing
         wd.find_element_by_xpath("//div[@id='content']/form[1]/input[22]").click()
         wd.find_element_by_link_text("home").click()
+        self.contact_cash = None
 
     def delete_first_contact(self):
         wd = self.app.wd
@@ -136,6 +139,7 @@ class ContactHelper:
         wd.find_element_by_xpath("//div[@id='content']/form[2]/div[2]/input").click()
         wd.switch_to_alert().accept()
         wd.find_element_by_link_text("home").click()
+        self.contact_cash = None
 
     def count(self):
         wd = self.app.wd
@@ -143,13 +147,16 @@ class ContactHelper:
             wd.get("http://localhost/addressbook/")
         return len(wd.find_elements_by_name("selected[]"))
 
+    contact_cash = None
+
     def get_contact_list(self):
-        wd = self.app.wd
-        contacts = []
-        for element in wd.find_elements_by_name("entry"):
-            cells = element.find_elements_by_tag_name("td")
-            first_name = cells[2].text
-            last_name = cells[1].text
-            id = element.find_element_by_tag_name("input").get_attribute("id")
-            contacts.append(Contact(firstname=first_name, lastname=last_name, id=id))
-        return contacts
+        if self.contact_cash is None:
+            wd = self.app.wd
+            self.contact_cash = []
+            for element in wd.find_elements_by_name("entry"):
+                cells = element.find_elements_by_tag_name("td")
+                first_name = cells[2].text
+                last_name = cells[1].text
+                id = element.find_element_by_tag_name("input").get_attribute("id")
+                self.contact_cash.append(Contact(firstname=first_name, lastname=last_name, id=id))
+        return list(self.contact_cash)
