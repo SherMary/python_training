@@ -54,10 +54,17 @@ class ContactHelper:
             wd.find_element_by_name(field_name).clear()
             wd.find_element_by_name(field_name).send_keys(text)
 
-    def modify_first_contact(self, new_contact_data):
+    def select_contact_by_index(self, index):
+        wd = self.app.wd
+        center = wd.find_elements_by_class_name("center")
+
+    def modify_contact_by_index(self, index, new_contact_data):
         wd = self.app.wd
         # open modification form
-        wd.find_element_by_xpath("//table[@id='maintable']/tbody/tr[2]/td[8]/a/img").click()
+        #wd.find_element_by_xpath("//table[@id='maintable']/tbody/tr[2]/td[8]/a/img").click()
+        #wd.find_elements_by_name("selected[]")[index].click()
+        #wd.find_elements_by_title("Edit")[index].click()
+        self.select_contact_by_index(index)
         # fill group form
         self.fill_contact_form(new_contact_data)
         # submit modification
@@ -134,8 +141,11 @@ class ContactHelper:
         self.contact_cash = None
 
     def delete_first_contact(self):
+        self.delete_contact_by_index(0)
+
+    def delete_contact_by_index(self, index):
         wd = self.app.wd
-        wd.find_element_by_name("selected[]").click()
+        wd.find_elements_by_name("selected[]")[index].click()
         wd.find_element_by_xpath("//div[@id='content']/form[2]/div[2]/input").click()
         wd.switch_to_alert().accept()
         wd.find_element_by_link_text("home").click()
