@@ -56,14 +56,11 @@ class ContactHelper:
 
     def select_contact_by_index(self, index):
         wd = self.app.wd
-        center = wd.find_elements_by_class_name("center")
+        wd.find_elements_by_xpath("//img[@title='Edit']")[index].click()
 
     def modify_contact_by_index(self, index, new_contact_data):
         wd = self.app.wd
         # open modification form
-        #wd.find_element_by_xpath("//table[@id='maintable']/tbody/tr[2]/td[8]/a/img").click()
-        #wd.find_elements_by_name("selected[]")[index].click()
-        #wd.find_elements_by_title("Edit")[index].click()
         self.select_contact_by_index(index)
         # fill group form
         self.fill_contact_form(new_contact_data)
