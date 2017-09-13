@@ -11,9 +11,9 @@ def test_add_contact(app):
                                title="Doctor Who?",
                                company="Masters of time",
                                address="Galifray",
-                               telhome="123-56-32",
-                               telmobile="+7000854930403",
-                               telwork="+89 039 9430288",
+                               telhome="1235632",
+                               telmobile="70008549303",
+                               telwork="8903994308",
                                fax="48390275902",
                                email="doctorwho86@gal.com",
                                email2="cleverboy@tardis.net",
@@ -22,7 +22,7 @@ def test_add_contact(app):
                                birth="1000",
                                anniversary="1500",
                                address2="Galifray dimension",
-                               home2="Planet Galifray",
+                               home2="PlanetGalifray",
                                notes="Somwhere far beyond")
     app.contact.create(contact)
     assert len(old_contacts) +1 == app.contact.count()
