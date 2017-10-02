@@ -1,5 +1,6 @@
 from model.contact import Contact
 import re
+import time
 
 
 class ContactHelper:
@@ -59,6 +60,10 @@ class ContactHelper:
         wd = self.app.wd
         wd.find_elements_by_xpath("//img[@title='Edit']")[index].click()
 
+    def select_contact_by_id(self, id):
+        wd = self.app.wd
+        wd.find_element_by_css_selector("input[value='%s']" % id).click()
+
     def modify_contact_by_index(self, index, new_contact_data):
         wd = self.app.wd
         # open modification form
@@ -68,6 +73,18 @@ class ContactHelper:
         # submit modification
         wd.find_element_by_name("update").click()
         wd.find_element_by_link_text("home").click()
+        self.contact_cash = None
+
+    def modify_contact_by_id(self, id, new_contact_data):
+        wd = self.app.wd
+        # open modification form
+        self.open_contact_to_edit_by_id(id)
+        # fill group form
+        self.fill_contact_form(new_contact_data)
+        # submit modification
+        wd.find_element_by_name("update").click()
+        wd.find_element_by_link_text("home").click()
+        time.sleep(3)
         self.contact_cash = None
 
     def edit_contact(self, contact):
@@ -149,6 +166,14 @@ class ContactHelper:
         wd.find_element_by_link_text("home").click()
         self.contact_cash = None
 
+    def delete_contact_by_id(self, id):
+        wd = self.app.wd
+        self.select_contact_by_id(id)
+        wd.find_element_by_css_selector("input[value='Delete']").click()
+        wd.switch_to_alert().accept()
+        wd.find_element_by_link_text("home").click()
+        self.contact_cash = None
+
     def count(self):
         wd = self.app.wd
         if not (wd.current_url.endswith("/addressbook/") and len(wd.find_elements_by_name("searchform"))) > 0:
@@ -204,6 +229,12 @@ class ContactHelper:
         row = wd.find_elements_by_name("entry")[index]
         cell = row.find_elements_by_tag_name("td")[7]
         cell.find_element_by_tag_name("a").click()
+
+    def open_contact_to_edit_by_id(self, id):
+        wd = self.app.wd
+        self.app.open_home_page()
+        wd.find_element_by_xpath("//input[@id='%s']" % id).click()
+        wd.find_element_by_xpath("//a[@href='edit.php?id=%s']/img[@title='Edit']" % id).click()
 
     def get_contact_from_view_page(self, index):
         wd = self.app.wd
