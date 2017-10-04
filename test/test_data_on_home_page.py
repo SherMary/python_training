@@ -1,7 +1,22 @@
 import re
+from model.contact import Contact
 
 
-def test_data_on_home_page(app):
+def test_data_on_home_page_compared_with_bd(app, db):
+    contact_list_from_db = sorted(db.get_contact_list(), key=Contact.id_or_max)
+    contact_list_from_home_page = sorted(app.contact.get_contact_list(), key=Contact.id_or_max)
+    assert len(contact_list_from_home_page) == len(contact_list_from_db)
+    assert contact_list_from_home_page == contact_list_from_db
+    for i in range(0, len(contact_list_from_home_page)):
+        contact_from_home_page = contact_list_from_home_page[i]
+        contact_from_db = contact_list_from_db[i]
+        assert contact_from_home_page.lastname == contact_from_db.lastname
+        assert contact_from_home_page.firstname == contact_from_db.firstname
+        assert contact_from_home_page.address == contact_from_db.address
+        assert contact_from_home_page.all_emails_from_home_page == merge_emails_like_on_home_page(contact_from_db)
+        assert contact_from_home_page.all_phones_from_home_page == merge_phones_like_on_home_page(contact_from_db)
+
+"""def test_data_on_home_page(app):
     contact_from_home_page = app.contact.get_contact_list()[0]
     contact_from_edit_page = app.contact.get_contact_info_from_edit_page(0)
     assert contact_from_home_page.all_phones_from_home_page == merge_phones_like_on_home_page(
@@ -10,7 +25,7 @@ def test_data_on_home_page(app):
         contact_from_edit_page)
     assert contact_from_home_page.firstname == contact_from_edit_page.firstname
     assert contact_from_home_page.lastname == contact_from_edit_page.lastname
-    assert contact_from_home_page.address == contact_from_edit_page.address
+    assert contact_from_home_page.address == contact_from_edit_page.address"""
 
 
 def clear(s):
