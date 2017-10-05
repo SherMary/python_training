@@ -246,3 +246,10 @@ class ContactHelper:
         home2 = re.search("P: (.*)", text).group(1)
         return Contact(telhome=telhome, telwork=telwork,
                        telmobile=telmobile, home2=home2)
+
+    def add_contact_to_group_by_id(self, id):
+        wd = self.app.wd
+        self.select_contact_by_id(id)
+        wd.find_element_by_css_selector("input[value='Add to']").click()
+        wd.find_element_by_css_selector("i a").click()
+
