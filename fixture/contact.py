@@ -253,3 +253,12 @@ class ContactHelper:
         wd.find_element_by_css_selector("input[value='Add to']").click()
         wd.find_element_by_css_selector("i a").click()
 
+    def del_contact_from_group_by_id(self, id):
+        wd = self.app.wd
+        wd.find_element_by_xpath("//input[@id='%s']" % id).click()
+        wd.find_element_by_xpath("//a[@href='view.php?id=%s']/img[@title='Details']" % id).click()
+        wd.find_element_by_css_selector("i a").click()
+        self.select_contact_by_id(id)
+        wd.find_element_by_css_selector("input[name='remove']").click()
+        wd.find_element_by_css_selector("i a").click()
+        time.sleep(3)
