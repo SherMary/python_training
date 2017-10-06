@@ -93,6 +93,16 @@ class GroupHelper:
         wd = self.app.wd
         wd.find_element_by_css_selector("input[value='%s']" % id).click()
 
+    def choose_group_to_add_contact_by_id(self, group_id):
+        wd = self.app.wd
+        wd.find_element_by_xpath("//select[@name='to_group']/option[@value='%s']" % group_id).click()
+        wd.find_element_by_css_selector("input[name='add']").click()
+        wd.find_element_by_css_selector("i a").click()
+
+    def choose_group_to_view_contact_by_id(self, group_id):
+        wd = self.app.wd
+        wd.find_element_by_xpath("//select[@name='group']/option[@value='%s']" % group_id).click()
+
     def delete_group_by_index(self, index):
         wd = self.app.wd
         self.open_groups_page()

@@ -1,3 +1,4 @@
+import pymysql.cursors
 from pony.orm import *
 from datetime import datetime
 from model.group import Group

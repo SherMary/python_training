@@ -182,7 +182,7 @@ class ContactHelper:
 
     contact_cash = None
 
-    def get_contact_list(self):
+    """def get_contact_list(self):
         if self.contact_cash is None:
             wd = self.app.wd
             self.contact_cash = []
@@ -197,7 +197,7 @@ class ContactHelper:
                 self.contact_cash.append(Contact(firstname=first_name, lastname=last_name, id=id, address=address,
                                                  all_phones_from_home_page=all_phones,
                                                  all_emails_from_home_page=all_emails))
-        return list(self.contact_cash)
+        return list(self.contact_cash)"""
 
     def get_contact_info_from_edit_page(self, index):
         wd = self.app.wd
@@ -258,6 +258,30 @@ class ContactHelper:
         wd.find_element_by_xpath("//input[@id='%s']" % id).click()
         wd.find_element_by_xpath("//a[@href='view.php?id=%s']/img[@title='Details']" % id).click()
         wd.find_element_by_css_selector("i a").click()
+        self.select_contact_by_id(id)
+        wd.find_element_by_css_selector("input[name='remove']").click()
+        wd.find_element_by_css_selector("i a").click()
+        time.sleep(3)
+
+    def filter_not_in_group_contact(self):
+        wd = self.app.wd
+        wd.find_element_by_xpath("//select[@name='group']/option[@value='[none]']").click()
+
+
+    def get_contact_list(self):
+             wd = self.app.wd
+             contacts = []
+             for element in wd.find_elements_by_name("entry"):
+                 cells = element.find_elements_by_tag_name("td")
+                 first_name = cells[2].text
+                 last_name = cells[1].text
+                 id = element.find_element_by_tag_name("input").get_attribute("id")
+                 contacts.append(Contact(firstname=first_name, lastname=last_name, id=id))
+             return contacts
+
+
+    def remove_contact_from_group_by_id(self, id):
+        wd = self.app.wd
         self.select_contact_by_id(id)
         wd.find_element_by_css_selector("input[name='remove']").click()
         wd.find_element_by_css_selector("i a").click()
