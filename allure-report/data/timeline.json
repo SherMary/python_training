@@ -1,0 +1,25 @@
+{
+  "uid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
+  "name" : "timeline",
+  "children" : [ {
+    "name" : "PC-Lite",
+    "children" : [ {
+      "name" : "25664-MainThread",
+      "children" : [ {
+        "name" : "test_delete_some_group",
+        "uid" : "1aa827afa1921cfa",
+        "parentUid" : "1542c4cab99c7271c38c9d128f392acd",
+        "status" : "passed",
+        "time" : {
+          "start" : 1507298130808,
+          "stop" : 1507298151321,
+          "duration" : 20513
+        },
+        "flaky" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "1542c4cab99c7271c38c9d128f392acd"
+    } ],
+    "uid" : "8cc3b8db2eeffbb470d138c9120d0c77"
+  } ]
+}

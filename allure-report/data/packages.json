@@ -1,0 +1,21 @@
+{
+  "uid" : "83edc06c07f9ae9e47eb6dd1b683e4e2",
+  "name" : "packages",
+  "children" : [ {
+    "name" : "test.test_del_group",
+    "children" : [ {
+      "name" : "test_delete_some_group",
+      "uid" : "1aa827afa1921cfa",
+      "parentUid" : "b18e9fe6511b66d8665057adfa5d48b1",
+      "status" : "passed",
+      "time" : {
+        "start" : 1507298130808,
+        "stop" : 1507298151321,
+        "duration" : 20513
+      },
+      "flaky" : false,
+      "parameters" : [ ]
+    } ],
+    "uid" : "test.test_del_group"
+  } ]
+}

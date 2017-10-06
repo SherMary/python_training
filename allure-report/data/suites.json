@@ -1,0 +1,21 @@
+{
+  "uid" : "98d3104e051c652961429bf95fa0b5d6",
+  "name" : "suites",
+  "children" : [ {
+    "name" : "test.test_del_group",
+    "children" : [ {
+      "name" : "test_delete_some_group",
+      "uid" : "1aa827afa1921cfa",
+      "parentUid" : "4f4848522abefeb5052b33b3258dc9d0",
+      "status" : "passed",
+      "time" : {
+        "start" : 1507298130808,
+        "stop" : 1507298151321,
+        "duration" : 20513
+      },
+      "flaky" : false,
+      "parameters" : [ ]
+    } ],
+    "uid" : "4f4848522abefeb5052b33b3258dc9d0"
+  } ]
+}

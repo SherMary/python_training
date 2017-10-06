@@ -1,0 +1,11 @@
+[ {
+  "uid" : "1aa827afa1921cfa",
+  "name" : "test_delete_some_group",
+  "time" : {
+    "start" : 1507298130808,
+    "stop" : 1507298151321,
+    "duration" : 20513
+  },
+  "status" : "passed",
+  "severity" : "normal"
+} ]
