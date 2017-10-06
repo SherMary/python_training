@@ -1,10 +1,40 @@
 [ {
-  "uid" : "1aa827afa1921cfa",
+  "uid" : "7621e2e3f92778f9",
+  "name" : "test_delete_some_contact",
+  "time" : {
+    "start" : 1507300244034,
+    "stop" : 1507300244395,
+    "duration" : 361
+  },
+  "status" : "failed",
+  "severity" : "normal"
+}, {
+  "uid" : "1f8babb2ce90de8",
   "name" : "test_delete_some_group",
   "time" : {
-    "start" : 1507298130808,
-    "stop" : 1507298151321,
-    "duration" : 20513
+    "start" : 1507300232207,
+    "stop" : 1507300244015,
+    "duration" : 11808
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "eb5fe837d95d92e1",
+  "name" : "test_modify_group_name",
+  "time" : {
+    "start" : 1507300250116,
+    "stop" : 1507300256497,
+    "duration" : 6381
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "5fb154c3c7a24e26",
+  "name" : "test_modify_contact_firstname_lastname",
+  "time" : {
+    "start" : 1507300244396,
+    "stop" : 1507300250115,
+    "duration" : 5719
   },
   "status" : "passed",
   "severity" : "normal"

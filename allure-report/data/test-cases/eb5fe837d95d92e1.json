@@ -1,0 +1,61 @@
+{
+  "uid" : "eb5fe837d95d92e1",
+  "name" : "test_modify_group_name",
+  "fullName" : "test.test_modify_group.test_modify_group_name",
+  "historyId" : "24c2cf2c59f53a515ab511f6b05943fa",
+  "time" : {
+    "start" : 1507300250116,
+    "stop" : 1507300256497,
+    "duration" : 6381
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "passed",
+  "statusDetails" : {
+    "flaky" : false
+  },
+  "beforeStages" : [ ],
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "host",
+    "value" : "PC-Lite"
+  }, {
+    "name" : "severity",
+    "value" : "normal"
+  }, {
+    "name" : "thread",
+    "value" : "5840-MainThread"
+  }, {
+    "name" : "suite",
+    "value" : "test.test_modify_group"
+  }, {
+    "name" : "testClass",
+    "value" : "test.test_modify_group"
+  }, {
+    "name" : "testMethod",
+    "value" : "test_modify_group_name"
+  }, {
+    "name" : "package",
+    "value" : "test.test_modify_group"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "eb5fe837d95d92e1.json",
+  "statusDetailsSafe" : {
+    "flaky" : false
+  },
+  "statusMessage" : {
+    "present" : false
+  },
+  "parameterValues" : [ ]
+}

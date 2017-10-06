@@ -2,20 +2,72 @@
   "uid" : "83edc06c07f9ae9e47eb6dd1b683e4e2",
   "name" : "packages",
   "children" : [ {
-    "name" : "test.test_del_group",
+    "name" : "test",
     "children" : [ {
-      "name" : "test_delete_some_group",
-      "uid" : "1aa827afa1921cfa",
-      "parentUid" : "b18e9fe6511b66d8665057adfa5d48b1",
-      "status" : "passed",
-      "time" : {
-        "start" : 1507298130808,
-        "stop" : 1507298151321,
-        "duration" : 20513
-      },
-      "flaky" : false,
-      "parameters" : [ ]
+      "name" : "test_del_group",
+      "children" : [ {
+        "name" : "test_delete_some_group",
+        "uid" : "1f8babb2ce90de8",
+        "parentUid" : "b18e9fe6511b66d8665057adfa5d48b1",
+        "status" : "passed",
+        "time" : {
+          "start" : 1507300232207,
+          "stop" : 1507300244015,
+          "duration" : 11808
+        },
+        "flaky" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "b18e9fe6511b66d8665057adfa5d48b1"
+    }, {
+      "name" : "test_del_contact",
+      "children" : [ {
+        "name" : "test_delete_some_contact",
+        "uid" : "7621e2e3f92778f9",
+        "parentUid" : "9ede81b1639a6772534a0ecd029f166f",
+        "status" : "failed",
+        "time" : {
+          "start" : 1507300244034,
+          "stop" : 1507300244395,
+          "duration" : 361
+        },
+        "flaky" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "9ede81b1639a6772534a0ecd029f166f"
+    }, {
+      "name" : "test_modify_contact",
+      "children" : [ {
+        "name" : "test_modify_contact_firstname_lastname",
+        "uid" : "5fb154c3c7a24e26",
+        "parentUid" : "9e0e1358f14a4e2ab23d1868944b8ac6",
+        "status" : "passed",
+        "time" : {
+          "start" : 1507300244396,
+          "stop" : 1507300250115,
+          "duration" : 5719
+        },
+        "flaky" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "9e0e1358f14a4e2ab23d1868944b8ac6"
+    }, {
+      "name" : "test_modify_group",
+      "children" : [ {
+        "name" : "test_modify_group_name",
+        "uid" : "eb5fe837d95d92e1",
+        "parentUid" : "43064af4e45ae60aa611f06dc92bd246",
+        "status" : "passed",
+        "time" : {
+          "start" : 1507300250116,
+          "stop" : 1507300256497,
+          "duration" : 6381
+        },
+        "flaky" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "43064af4e45ae60aa611f06dc92bd246"
     } ],
-    "uid" : "test.test_del_group"
+    "uid" : "d662795e8d349f9b5595bf62f43ea7ae"
   } ]
 }

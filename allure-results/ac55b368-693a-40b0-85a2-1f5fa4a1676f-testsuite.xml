@@ -1,13 +1,13 @@
-<ns0:test-suite xmlns:ns0="urn:model.allure.qatools.yandex.ru" start="1507298130808" stop="1507298151321">
+<ns0:test-suite xmlns:ns0="urn:model.allure.qatools.yandex.ru" start="1507300232207" stop="1507300244015">
   <name>test.test_del_group</name>
   <labels/>
   <test-cases>
-    <test-case start="1507298130808" status="passed" stop="1507298151321">
+    <test-case start="1507300232207" status="passed" stop="1507300244015">
       <name>test_delete_some_group</name>
       <attachments/>
       <labels>
         <label name="severity" value="normal"/>
-        <label name="thread" value="25664-MainThread"/>
+        <label name="thread" value="5840-MainThread"/>
         <label name="host" value="PC-Lite"/>
       </labels>
       <steps/>

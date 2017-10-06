@@ -3,28 +3,61 @@
     "reportName" : "Allure Report",
     "testRuns" : [ ],
     "statistic" : {
-      "failed" : 0,
+      "failed" : 1,
       "broken" : 0,
       "skipped" : 0,
-      "passed" : 1,
+      "passed" : 3,
       "unknown" : 0,
-      "total" : 1
+      "total" : 4
     },
     "time" : {
-      "start" : 1507298130808,
-      "stop" : 1507298151321,
-      "duration" : 20513,
-      "minDuration" : 20513,
-      "maxDuration" : 20513,
-      "sumDuration" : 20513
+      "start" : 1507300232207,
+      "stop" : 1507300256497,
+      "duration" : 24290,
+      "minDuration" : 361,
+      "maxDuration" : 11808,
+      "sumDuration" : 24269
     }
   },
   "environment" : [ ],
   "suites" : {
-    "total" : 1,
+    "total" : 4,
     "items" : [ {
+      "uid" : "a3102e64d84e85adef5a7695e29cb317",
+      "name" : "test.test_del_contact",
+      "statistic" : {
+        "failed" : 1,
+        "broken" : 0,
+        "skipped" : 0,
+        "passed" : 0,
+        "unknown" : 0,
+        "total" : 1
+      }
+    }, {
       "uid" : "4f4848522abefeb5052b33b3258dc9d0",
       "name" : "test.test_del_group",
+      "statistic" : {
+        "failed" : 0,
+        "broken" : 0,
+        "skipped" : 0,
+        "passed" : 1,
+        "unknown" : 0,
+        "total" : 1
+      }
+    }, {
+      "uid" : "a3a88b865a333bf4e33d6148603c105e",
+      "name" : "test.test_modify_contact",
+      "statistic" : {
+        "failed" : 0,
+        "broken" : 0,
+        "skipped" : 0,
+        "passed" : 1,
+        "unknown" : 0,
+        "total" : 1
+      }
+    }, {
+      "uid" : "86d45e4e89f5c3f72ca2534de35df0f8",
+      "name" : "test.test_modify_group",
       "statistic" : {
         "failed" : 0,
         "broken" : 0,
@@ -37,22 +70,33 @@
   },
   "history-trend" : [ {
     "statistic" : {
-      "failed" : 0,
+      "failed" : 1,
       "broken" : 0,
       "skipped" : 0,
-      "passed" : 1,
+      "passed" : 3,
       "unknown" : 0,
-      "total" : 1
+      "total" : 4
     }
   } ],
   "behaviors" : {
-    "total" : 1,
+    "total" : 4,
     "items" : [ ]
   },
   "executors" : [ ],
   "categories" : {
-    "total" : 0,
-    "items" : [ ]
+    "total" : 1,
+    "items" : [ {
+      "uid" : "8fb3a91ba5aaf9de24cc8a92edc82b5d",
+      "name" : "Product defects",
+      "statistic" : {
+        "failed" : 1,
+        "broken" : 0,
+        "skipped" : 0,
+        "passed" : 0,
+        "unknown" : 0,
+        "total" : 1
+      }
+    } ]
   },
   "launches" : [ ]
 }

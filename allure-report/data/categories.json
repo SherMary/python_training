@@ -1,5 +1,25 @@
 {
   "uid" : "4b4757e66a1912dae1a509f688f20b0f",
   "name" : "categories",
-  "children" : [ ]
+  "children" : [ {
+    "name" : "Product defects",
+    "children" : [ {
+      "name" : "NoSuchElementException: Message: Unable to locate element: {\"method\":\"css selector\",\"selector\":\"input[value='28']\"}\nStacktrace:\n    at FirefoxDriver.prototype.findElementInternal_ (file:///C:/Users/User/AppData/Local/Temp/tmpbe_hzndt/extensions/fxdriver@googlecode.com/components/driver-component.js:10991)\n    at FirefoxDriver.prototype.findElement (file:///C:/Users/User/AppData/Local/Temp/tmpbe_hzndt/extensions/fxdriver@googlecode.com/components/driver-component.js:11000)\n    at DelayedCommand.prototype.executeInternal_/k (file:///C:/Users/User/AppData/Local/Temp/tmpbe_hzndt/extensions/fxdriver@googlecode.com/components/command-processor.js:12877)\n    at DelayedCommand.prototype.executeInternal_ (file:///C:/Users/User/AppData/Local/Temp/tmpbe_hzndt/extensions/fxdriver@googlecode.com/components/command-processor.js:12882)\n    at DelayedCommand.prototype.execute/< (file:///C:/Users/User/AppData/Local/Temp/tmpbe_hzndt/extensions/fxdriver@googlecode.com/components/command-processor.js:12824)",
+      "children" : [ {
+        "name" : "test_delete_some_contact",
+        "uid" : "7621e2e3f92778f9",
+        "parentUid" : "4c7bb39c967f007d9b4d3f87d2b6cbb5",
+        "status" : "failed",
+        "time" : {
+          "start" : 1507300244034,
+          "stop" : 1507300244395,
+          "duration" : 361
+        },
+        "flaky" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "4c7bb39c967f007d9b4d3f87d2b6cbb5"
+    } ],
+    "uid" : "8fb3a91ba5aaf9de24cc8a92edc82b5d"
+  } ]
 }

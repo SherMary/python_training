@@ -9,12 +9,70 @@
       "total" : 1
     },
     "items" : [ {
-      "uid" : "1aa827afa1921cfa",
+      "uid" : "1f8babb2ce90de8",
       "status" : "passed",
       "time" : {
-        "start" : 1507298130808,
-        "stop" : 1507298151321,
-        "duration" : 20513
+        "start" : 1507300232207,
+        "stop" : 1507300244015,
+        "duration" : 11808
+      }
+    } ]
+  },
+  "24c2cf2c59f53a515ab511f6b05943fa" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "eb5fe837d95d92e1",
+      "status" : "passed",
+      "time" : {
+        "start" : 1507300250116,
+        "stop" : 1507300256497,
+        "duration" : 6381
+      }
+    } ]
+  },
+  "cf0289df77cefedc50e0655d6659dfde" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "5fb154c3c7a24e26",
+      "status" : "passed",
+      "time" : {
+        "start" : 1507300244396,
+        "stop" : 1507300250115,
+        "duration" : 5719
+      }
+    } ]
+  },
+  "c24e51a3645090c407c247ba3176af37" : {
+    "statistic" : {
+      "failed" : 1,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 0,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "7621e2e3f92778f9",
+      "status" : "failed",
+      "statusDetails" : "NoSuchElementException: Message: Unable to locate element: {\"method\":\"css selector\",\"selector\":\"input[value='28']\"}\nStacktrace:\n    at FirefoxDriver.prototype.findElementInternal_ (file:///C:/Users/User/AppData/Local/Temp/tmpbe_hzndt/extensions/fxdriver@googlecode.com/components/driver-component.js:10991)\n    at FirefoxDriver.prototype.findElement (file:///C:/Users/User/AppData/Local/Temp/tmpbe_hzndt/extensions/fxdriver@googlecode.com/components/driver-component.js:11000)\n    at DelayedCommand.prototype.executeInternal_/k (file:///C:/Users/User/AppData/Local/Temp/tmpbe_hzndt/extensions/fxdriver@googlecode.com/components/command-processor.js:12877)\n    at DelayedCommand.prototype.executeInternal_ (file:///C:/Users/User/AppData/Local/Temp/tmpbe_hzndt/extensions/fxdriver@googlecode.com/components/command-processor.js:12882)\n    at DelayedCommand.prototype.execute/< (file:///C:/Users/User/AppData/Local/Temp/tmpbe_hzndt/extensions/fxdriver@googlecode.com/components/command-processor.js:12824)",
+      "time" : {
+        "start" : 1507300244034,
+        "stop" : 1507300244395,
+        "duration" : 361
       }
     } ]
   }

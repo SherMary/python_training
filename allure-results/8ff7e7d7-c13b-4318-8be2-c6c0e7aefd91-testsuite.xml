@@ -1,0 +1,176 @@
+<ns0:test-suite xmlns:ns0="urn:model.allure.qatools.yandex.ru" start="1507300244034" stop="1507300244395">
+  <name>test.test_del_contact</name>
+  <labels/>
+  <test-cases>
+    <test-case start="1507300244034" status="failed" stop="1507300244395">
+      <name>test_delete_some_contact</name>
+      <failure>
+        <message>NoSuchElementException: Message: Unable to locate element: {"method":"css selector","selector":"input[value='28']"}
+Stacktrace:
+    at FirefoxDriver.prototype.findElementInternal_ (file:///C:/Users/User/AppData/Local/Temp/tmpbe_hzndt/extensions/fxdriver@googlecode.com/components/driver-component.js:10991)
+    at FirefoxDriver.prototype.findElement (file:///C:/Users/User/AppData/Local/Temp/tmpbe_hzndt/extensions/fxdriver@googlecode.com/components/driver-component.js:11000)
+    at DelayedCommand.prototype.executeInternal_/k (file:///C:/Users/User/AppData/Local/Temp/tmpbe_hzndt/extensions/fxdriver@googlecode.com/components/command-processor.js:12877)
+    at DelayedCommand.prototype.executeInternal_ (file:///C:/Users/User/AppData/Local/Temp/tmpbe_hzndt/extensions/fxdriver@googlecode.com/components/command-processor.js:12882)
+    at DelayedCommand.prototype.execute/&lt; (file:///C:/Users/User/AppData/Local/Temp/tmpbe_hzndt/extensions/fxdriver@googlecode.com/components/command-processor.js:12824)</message>
+        <stack-trace>app = &lt;fixture.application.Apllication object at 0x036D1550&gt;
+db = &lt;fixture.db.DbFixture object at 0x037FC0D0&gt;, check_ui = False
+
+    def test_delete_some_contact(app, db, check_ui):
+        if len(db.get_contact_list()) == 0:
+            app.contact.create(Contact(firstname="Test contact"))
+        old_contacts = db.get_contact_list()
+        contact = random.choice(old_contacts)
+&gt;       app.contact.delete_contact_by_id(contact.id)
+
+test\test_del_contact.py:10: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+fixture\contact.py:171: in delete_contact_by_id
+    self.select_contact_by_id(id)
+fixture\contact.py:65: in select_contact_by_id
+    wd.find_element_by_css_selector("input[value='%s']" % id).click()
+env\lib\site-packages\selenium\webdriver\remote\webdriver.py:457: in find_element_by_css_selector
+    return self.find_element(by=By.CSS_SELECTOR, value=css_selector)
+env\lib\site-packages\selenium\webdriver\remote\webdriver.py:791: in find_element
+    'value': value})['value']
+env\lib\site-packages\selenium\webdriver\remote\webdriver.py:256: in execute
+    self.error_handler.check_response(response)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = &lt;selenium.webdriver.remote.errorhandler.ErrorHandler object at 0x036E6030&gt;
+response = {'status': 500, 'value': '{"name":"findElement","sessionId":"130b0524-43e3-4690-a2de-967d4d2bd6b1","status":7,"value":...pbe_hzndt/extensions/fxdriver@googlecode.com/components/command-processor.js","lineNumber":12824,"columnNumber":5}]}}'}
+
+    def check_response(self, response):
+        """
+            Checks that a JSON response from the WebDriver does not have an error.
+    
+            :Args:
+             - response - The JSON response from the WebDriver server as a dictionary
+               object.
+    
+            :Raises: If the response contains an error message.
+            """
+        status = response.get('status', None)
+        if status is None or status == ErrorCode.SUCCESS:
+            return
+        value = None
+        message = response.get("message", "")
+        screen = response.get("screen", "")
+        stacktrace = None
+        if isinstance(status, int):
+            value_json = response.get('value', None)
+            if value_json and isinstance(value_json, basestring):
+                import json
+                try:
+                    value = json.loads(value_json)
+                    if len(value.keys()) == 1:
+                        value = value['value']
+                    status = value.get('error', None)
+                    if status is None:
+                        status = value["status"]
+                        message = value["value"]
+                        if not isinstance(message, basestring):
+                            value = message
+                            message = message.get('message')
+                    else:
+                        message = value.get('message', None)
+                except ValueError:
+                    pass
+    
+        exception_class = ErrorInResponseException
+        if status in ErrorCode.NO_SUCH_ELEMENT:
+            exception_class = NoSuchElementException
+        elif status in ErrorCode.NO_SUCH_FRAME:
+            exception_class = NoSuchFrameException
+        elif status in ErrorCode.NO_SUCH_WINDOW:
+            exception_class = NoSuchWindowException
+        elif status in ErrorCode.STALE_ELEMENT_REFERENCE:
+            exception_class = StaleElementReferenceException
+        elif status in ErrorCode.ELEMENT_NOT_VISIBLE:
+            exception_class = ElementNotVisibleException
+        elif status in ErrorCode.INVALID_ELEMENT_STATE:
+            exception_class = InvalidElementStateException
+        elif status in ErrorCode.INVALID_SELECTOR \
+                or status in ErrorCode.INVALID_XPATH_SELECTOR \
+                or status in ErrorCode.INVALID_XPATH_SELECTOR_RETURN_TYPER:
+            exception_class = InvalidSelectorException
+        elif status in ErrorCode.ELEMENT_IS_NOT_SELECTABLE:
+            exception_class = ElementNotSelectableException
+        elif status in ErrorCode.ELEMENT_NOT_INTERACTABLE:
+            exception_class = ElementNotInteractableException
+        elif status in ErrorCode.INVALID_COOKIE_DOMAIN:
+            exception_class = WebDriverException
+        elif status in ErrorCode.UNABLE_TO_SET_COOKIE:
+            exception_class = WebDriverException
+        elif status in ErrorCode.TIMEOUT:
+            exception_class = TimeoutException
+        elif status in ErrorCode.SCRIPT_TIMEOUT:
+            exception_class = TimeoutException
+        elif status in ErrorCode.UNKNOWN_ERROR:
+            exception_class = WebDriverException
+        elif status in ErrorCode.UNEXPECTED_ALERT_OPEN:
+            exception_class = UnexpectedAlertPresentException
+        elif status in ErrorCode.NO_ALERT_OPEN:
+            exception_class = NoAlertPresentException
+        elif status in ErrorCode.IME_NOT_AVAILABLE:
+            exception_class = ImeNotAvailableException
+        elif status in ErrorCode.IME_ENGINE_ACTIVATION_FAILED:
+            exception_class = ImeActivationFailedException
+        elif status in ErrorCode.MOVE_TARGET_OUT_OF_BOUNDS:
+            exception_class = MoveTargetOutOfBoundsException
+        else:
+            exception_class = WebDriverException
+        if value == '' or value is None:
+            value = response['value']
+        if isinstance(value, basestring):
+            if exception_class == ErrorInResponseException:
+                raise exception_class(response, value)
+            raise exception_class(value)
+        if message == "" and 'message' in value:
+            message = value['message']
+    
+        screen = None
+        if 'screen' in value:
+            screen = value['screen']
+    
+        stacktrace = None
+        if 'stackTrace' in value and value['stackTrace']:
+            stacktrace = []
+            try:
+                for frame in value['stackTrace']:
+                    line = self._value_or_default(frame, 'lineNumber', '')
+                    file = self._value_or_default(frame, 'fileName', '&lt;anonymous&gt;')
+                    if line:
+                        file = "%s:%s" % (file, line)
+                    meth = self._value_or_default(frame, 'methodName', '&lt;anonymous&gt;')
+                    if 'className' in frame:
+                        meth = "%s.%s" % (frame['className'], meth)
+                    msg = "    at %s (%s)"
+                    msg = msg % (meth, file)
+                    stacktrace.append(msg)
+            except TypeError:
+                pass
+        if exception_class == ErrorInResponseException:
+            raise exception_class(response, message)
+        elif exception_class == UnexpectedAlertPresentException and 'alert' in value:
+            raise exception_class(message, screen, stacktrace, value['alert'].get('text'))
+&gt;       raise exception_class(message, screen, stacktrace)
+E       selenium.common.exceptions.NoSuchElementException: Message: Unable to locate element: {"method":"css selector","selector":"input[value='28']"}
+E       Stacktrace:
+E           at FirefoxDriver.prototype.findElementInternal_ (file:///C:/Users/User/AppData/Local/Temp/tmpbe_hzndt/extensions/fxdriver@googlecode.com/components/driver-component.js:10991)
+E           at FirefoxDriver.prototype.findElement (file:///C:/Users/User/AppData/Local/Temp/tmpbe_hzndt/extensions/fxdriver@googlecode.com/components/driver-component.js:11000)
+E           at DelayedCommand.prototype.executeInternal_/k (file:///C:/Users/User/AppData/Local/Temp/tmpbe_hzndt/extensions/fxdriver@googlecode.com/components/command-processor.js:12877)
+E           at DelayedCommand.prototype.executeInternal_ (file:///C:/Users/User/AppData/Local/Temp/tmpbe_hzndt/extensions/fxdriver@googlecode.com/components/command-processor.js:12882)
+E           at DelayedCommand.prototype.execute/&lt; (file:///C:/Users/User/AppData/Local/Temp/tmpbe_hzndt/extensions/fxdriver@googlecode.com/components/command-processor.js:12824)
+
+env\lib\site-packages\selenium\webdriver\remote\errorhandler.py:194: NoSuchElementException</stack-trace>
+      </failure>
+      <attachments/>
+      <labels>
+        <label name="severity" value="normal"/>
+        <label name="thread" value="5840-MainThread"/>
+        <label name="host" value="PC-Lite"/>
+      </labels>
+      <steps/>
+    </test-case>
+  </test-cases>
+</ns0:test-suite>

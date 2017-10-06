@@ -1,0 +1,61 @@
+{
+  "uid" : "1f8babb2ce90de8",
+  "name" : "test_delete_some_group",
+  "fullName" : "test.test_del_group.test_delete_some_group",
+  "historyId" : "b066fff46e5d8d79e105d64621f8e2d9",
+  "time" : {
+    "start" : 1507300232207,
+    "stop" : 1507300244015,
+    "duration" : 11808
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "passed",
+  "statusDetails" : {
+    "flaky" : false
+  },
+  "beforeStages" : [ ],
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "host",
+    "value" : "PC-Lite"
+  }, {
+    "name" : "severity",
+    "value" : "normal"
+  }, {
+    "name" : "thread",
+    "value" : "5840-MainThread"
+  }, {
+    "name" : "suite",
+    "value" : "test.test_del_group"
+  }, {
+    "name" : "testClass",
+    "value" : "test.test_del_group"
+  }, {
+    "name" : "testMethod",
+    "value" : "test_delete_some_group"
+  }, {
+    "name" : "package",
+    "value" : "test.test_del_group"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "1f8babb2ce90de8.json",
+  "statusDetailsSafe" : {
+    "flaky" : false
+  },
+  "statusMessage" : {
+    "present" : false
+  },
+  "parameterValues" : [ ]
+}
